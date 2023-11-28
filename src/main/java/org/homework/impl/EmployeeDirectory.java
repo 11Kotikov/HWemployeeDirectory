@@ -17,7 +17,7 @@ public class EmployeeDirectory implements EmployeeRepository {
     }
 
     @Override
-    public Employee findByExperience(byte expAmount) {
+    public Employee findByExperience(int expAmount) {
         for (Employee employee : employees) {
             return employee;
         }
@@ -35,10 +35,10 @@ public class EmployeeDirectory implements EmployeeRepository {
     }
 
     @Override
-    public Integer findById(int id) {
+    public Employee findById(int id) {
         for (Employee employee : employees) {
             if (employee.getId() == id) {
-                return employee.getId();
+                return employee;
             }
         }
         return null;

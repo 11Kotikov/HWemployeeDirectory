@@ -6,12 +6,12 @@ public abstract class Employee {
     private int id;
     private String phoneNumber;
     private String name;
-    private byte yearsOfExperience;
+    private int yearsOfExperience;
 
-    public Employee(int id, String phoneNumber, String name, byte yearsOfExperience) {
+    public Employee(int id, String name, String phoneNumber, int yearsOfExperience) {
         this.id = id;
-        this.phoneNumber = phoneNumber;
         this.name = name;
+        this.phoneNumber = phoneNumber;
         this.yearsOfExperience = yearsOfExperience;
     }
 
@@ -39,7 +39,7 @@ public abstract class Employee {
         this.name = name;
     }
 
-    public byte getYearsOfExperience() {
+    public int getYearsOfExperience() {
         return yearsOfExperience;
     }
 
@@ -49,8 +49,8 @@ public abstract class Employee {
 
     @Override
     public String toString() {
-        return "id: " + id + " phoneNumber: " + phoneNumber +
-                " name: " + name + " yearsOfExperience: " + yearsOfExperience;
+        return "\n" + "id:" + id + " phoneNumber:" + phoneNumber +
+                " name: " + name + " yearsOfExperience:" + yearsOfExperience;
     }
 
     @Override
@@ -61,7 +61,7 @@ public abstract class Employee {
         return id == employee.id &&
                 phoneNumber.equals(employee.phoneNumber) &&
                 name.equals(employee.name) &&
-                (byte) employee.yearsOfExperience == yearsOfExperience;
+                employee.yearsOfExperience == yearsOfExperience;
     }
 
     @Override
